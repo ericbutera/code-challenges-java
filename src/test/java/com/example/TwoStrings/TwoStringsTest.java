@@ -37,6 +37,6 @@ class TwoStringsTest {
     void compareTest5() { assertEquals("YES", twoStrings("aardvark", "apple")); }
 
     @Test
-    void compareTest6() { assertEquals("NO!", twoStrings("beetroot", "sandals")); }
+    void compareTest6() { assertEquals("NO", twoStrings("beetroot", "sandals")); }
 
 }
