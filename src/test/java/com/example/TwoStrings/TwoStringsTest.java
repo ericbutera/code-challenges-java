@@ -1,30 +1,25 @@
 package com.example.TwoStrings;
 
-import org.junit.jupiter.api.Test;
-
-import static com.example.TwoStrings.TwoStrings.twoStrings;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.util.concurrent.TimeUnit;
 
-class TwoStringsTest {
+import static com.example.TwoStrings.TwoStrings.twoStrings;
 
+class TwoStringsTest {
     @Test
     void andArtTest() { assertEquals("YES", twoStrings("and", "art")); }
 
     @Test
-    void helloWorldTest() {
-        assertEquals("YES", twoStrings("hello", "world"));
-    }
+    void helloWorldTest() { assertEquals("YES", twoStrings("hello", "world")); }
 
     @Test
-    void hiWorldTest() {
-        assertEquals("NO", twoStrings("hi", "world"));
-    }
+    void hiWorldTest() { assertEquals("NO", twoStrings("hi", "world")); }
 
     @Test
     void compareTest1() { assertEquals("NO", twoStrings("wouldyoulikefrie", "abcabcabcabcabcabc")); }
@@ -50,5 +45,4 @@ class TwoStringsTest {
     void testCase04(String s1, String s2, String result) {
         assertEquals(result, twoStrings(s1, s2));
     }
-
 }
