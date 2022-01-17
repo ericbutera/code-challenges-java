@@ -5,11 +5,16 @@ import org.junit.jupiter.api.Test;
 import static com.example.TwoStrings.TwoStrings.twoStrings;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+
+import java.util.concurrent.TimeUnit;
+
 class TwoStringsTest {
+
     @Test
-    void andArtTest() {
-        assertEquals("YES", twoStrings("and", "art"));
-    }
+    void andArtTest() { assertEquals("YES", twoStrings("and", "art")); }
 
     @Test
     void helloWorldTest() {
@@ -37,6 +42,13 @@ class TwoStringsTest {
     void compareTest5() { assertEquals("YES", twoStrings("aardvark", "apple")); }
 
     @Test
-    void compareTest6() { assertEquals("NO!", twoStrings("beetroot", "sandals")); }
+    void compareTest6() { assertEquals("NO", twoStrings("beetroot", "sandals")); }
+
+    @Timeout(value=100, unit = TimeUnit.MILLISECONDS)
+    @ParameterizedTest()
+    @CsvFileSource(resources = "/input04.csv", numLinesToSkip = 1, maxCharsPerColumn = 100000)
+    void testCase04(String s1, String s2, String result) {
+        assertEquals(result, twoStrings(s1, s2));
+    }
 
 }
