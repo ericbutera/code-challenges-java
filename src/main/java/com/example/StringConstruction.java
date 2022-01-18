@@ -22,19 +22,16 @@ public class StringConstruction {
         var max = s.length();
         var out = new char[max];
         var cache = new char[max];
-        int cacheIndex = 0;
 
+        int cacheIndex = 0;
         int cost = 0;
 
         for (var x=0; x < max; x++) {
-            boolean addCost = true;
-            boolean cacheHit = false;
-
-            char current = s.charAt(x);
+            var cacheHit = false;
+            var current = s.charAt(x);
 
             for (var y=0; y < cacheIndex; y++) {
                 if (cache[y] == current) {
-                    addCost = false;
                     cacheHit = true;
                     break;
                 }
@@ -42,11 +39,9 @@ public class StringConstruction {
 
             if (!cacheHit) {
                 cache[cacheIndex] = current;
-                cacheIndex++;
-            }
-
-            if (addCost)
+                cacheIndex++; // how curious cache index & cost are the same
                 cost++;
+            }
 
             out[x] = current;
         }
