@@ -8,7 +8,7 @@ public class TwoStrings {
         // cache prevents retrying characters
         var cache = new ArrayList<Character>();
 
-        for (var x=0; x < s1.length(); x++) {
+        for (var x=0; x < s1.length(); x++) { // make smaller string the outer loop?
             char first = s1.charAt(x);
 
             if (cache.contains(first))
