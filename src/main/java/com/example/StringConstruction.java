@@ -31,6 +31,12 @@ public class StringConstruction {
             var current = s.charAt(x);
 
             for (var y=0; y < cacheIndex; y++) {
+                // there must be a faster way to do this?
+                // maybe a hash/dictionary of {char code => char}
+                //
+                // start in the middle of cache (cache[ceil(cacheIndex / 2)])
+                // is value > than current, then try to the right (range of middle to end / 2)
+                // else try to the left
                 if (cache[y] == current) {
                     cacheHit = true;
                     break;
