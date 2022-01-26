@@ -41,7 +41,7 @@ public class ClimbingTheLeaderboardTest {
         assertEquals(res, climbingLeaderboard(ranked, player));
     }
 
-    @Timeout(value=100, unit = TimeUnit.MILLISECONDS)
+    // @Timeout(value=100, unit = TimeUnit.MILLISECONDS)
     @ParameterizedTest()
     @CsvFileSource(resources = "/climbing-the-leaderboard.csv", numLinesToSkip = 1, maxCharsPerColumn = 2500000)
     void testCase01(String ranked, String player, String result) {
